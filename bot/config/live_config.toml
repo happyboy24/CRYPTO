@@ -1,0 +1,32 @@
+# NautilusTrader LiveNodeConfig
+trader_id = "BOT-001"
+name = "crypto-bot"
+
+[engine]
+log_level = "INFO"
+tracing = true
+online = true
+
+[[actors]]
+type = "LiveExecutionClientFactory"
+client_id = "binance"
+
+[actors.config]
+api_key = "${BINANCE_API_KEY}"
+api_secret = "${BINANCE_API_SECRET}"
+sandbox = true  # Set false for production
+
+[[data_engines]]
+name = "binance_data"
+
+[data_engines.config]
+routing = false
+
+# Instruments (crypto/forex)
+instruments = [
+  {venue="BINANCE", id="BTCUSDT", cls="FXRfq", price_precision=2, size_precision=6, price_increment=0.01, size_increment=0.000001, lot_size=0.000001, max_quantity=1000.0, min_quantity=0.000001, max_notional=1000000.0, max_price=10000000.0},
+  {venue="BINANCE", id="ETHUSDT", cls="FXRfq", price_precision=2, size_precision=6, price_increment=0.01, size_increment=0.000001, lot_size=0.000001, max_quantity=10000.0, min_quantity=0.000001, max_notional=1000000.0, max_price=10000000.0},
+]
+
+# Strategies loaded later via API
+
