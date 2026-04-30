@@ -5,8 +5,9 @@ import DashboardTab from './components/tabs/DashboardTab'
 import SignalsTab from './components/tabs/SignalsTab'
 import BotControlTab from './components/tabs/BotControlTab'
 import AnalyticsTab from './components/tabs/AnalyticsTab'
+import DripsWidget from './components/DripsWidget'
 
-export type TabKey = 'dashboard' | 'signals' | 'bot' | 'analytics'
+export type TabKey = 'dashboard' | 'signals' | 'bot' | 'analytics' | 'drips'
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabKey>('dashboard')
@@ -21,10 +22,10 @@ function App() {
         {activeTab === 'signals' && <SignalsTab />}
         {activeTab === 'bot' && <BotControlTab />}
         {activeTab === 'analytics' && <AnalyticsTab />}
+        {activeTab === 'drips' && <DripsWidget />}
       </main>
     </div>
   )
 }
 
 export default App
-

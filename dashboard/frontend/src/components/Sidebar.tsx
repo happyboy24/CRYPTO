@@ -10,6 +10,7 @@ const tabs: { key: TabKey; label: string; icon: string }[] = [
   { key: 'signals', label: 'Signals', icon: '📡' },
   { key: 'bot', label: 'Bot Control', icon: '🤖' },
   { key: 'analytics', label: 'Analytics', icon: '📈' },
+  { key: 'drips', label: 'Support', icon: '💧' },
 ]
 
 export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
@@ -39,4 +40,3 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
     </aside>
   )
 }
-

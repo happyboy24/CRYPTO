@@ -1,3 +1,5 @@
+import DripsEarnings from './DripsEarnings'
+
 interface TopBarProps {
   symbol: string
   onSymbolChange: (symbol: string) => void
@@ -15,6 +17,7 @@ export default function TopBar({ symbol, onSymbolChange }: TopBarProps) {
         />
       </div>
       <div className="topbar-actions">
+        <DripsEarnings />
         <button
           className="btn btn-refresh"
           onClick={() => window.location.reload()}
